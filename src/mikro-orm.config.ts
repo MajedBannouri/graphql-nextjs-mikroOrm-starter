@@ -13,7 +13,7 @@ export default {
   entities: [Post],
   dbName: process.env.DB_NAME,
   user: process.env.USER_NAME,
-  password: "123456",
+  password: process.env.PASSWORD,
   debug: !__prod__,
   type: "postgresql",
 } as Parameters<typeof MikroORM.init>[0];

@@ -16,7 +16,7 @@ exports.default = {
     entities: [Post_1.Post],
     dbName: process.env.DB_NAME,
     user: process.env.USER_NAME,
-    password: "123456",
+    password: process.env.PASSWORD,
     debug: !constants_1.__prod__,
     type: "postgresql",
 };

@@ -36,5 +36,8 @@
       "./src/mikro-orm.config.ts",
       "./dist/mikro-orm.config.js"
     ]
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }

@@ -8,21 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("@mikro-orm/core");
-const Post_1 = require("./entities/Post");
-const mikro_orm_config_1 = __importDefault(require("./mikro-orm.config"));
-const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    const orm = yield core_1.MikroORM.init(mikro_orm_config_1.default);
-    yield orm.getMigrator().up();
-    const posts = yield orm.em.find(Post_1.Post, {});
-    console.log(posts);
-});
-main().catch((err) => {
-    console.error(err);
-});
-console.log("hello mxe");
-//# sourceMappingURL=index.js.map
+exports.Migration20210613144500 = void 0;
+const migrations_1 = require("@mikro-orm/migrations");
+class Migration20210613144500 extends migrations_1.Migration {
+    up() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.addSql('create table "post" ("id" serial primary key, "created_at" timestamptz(0) not null, "updated_at" timestamptz(0) not null, "title" text not null);');
+        });
+    }
+}
+exports.Migration20210613144500 = Migration20210613144500;
+//# sourceMappingURL=Migration20210613144500.js.map

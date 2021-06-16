@@ -99,7 +99,6 @@ let UserResolver = class UserResolver {
                 yield em.persistAndFlush(user);
             }
             catch (err) {
-                console.log("ok");
                 if (err.code === "23505" || err.detail.includes("already exists")) {
                     return {
                         errors: [
@@ -110,7 +109,6 @@ let UserResolver = class UserResolver {
                         ],
                     };
                 }
-                console.log(err);
             }
             return { user };
         });

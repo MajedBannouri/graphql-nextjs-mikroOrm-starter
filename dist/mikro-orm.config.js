@@ -7,13 +7,14 @@ const constants_1 = require("./constants");
 const Post_1 = require("./entities/Post");
 const path_1 = __importDefault(require("path"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const User_1 = require("./entities/User");
 dotenv_1.default.config();
 exports.default = {
     migrations: {
-        path: path_1.default.join(__dirname, "./migrations"),
+        path: path_1.default.join(__dirname, "./migration"),
         pattern: /^[\w-]+\d+\.[jt]s$/,
     },
-    entities: [Post_1.Post],
+    entities: [Post_1.Post, User_1.User],
     dbName: process.env.DB_NAME,
     user: process.env.USER_NAME,
     password: process.env.PASSWORD,
